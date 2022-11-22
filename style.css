@@ -1,0 +1,51 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main {
+  width: 95%;
+  height: 95%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  border: 3px solid black;
+}
+
+.container {
+  width: 100%;
+  height: 70%;
+  display: grid;
+  grid-template-rows: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.circleArea {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.circle {
+  width: 100px;
+  height: 100px;
+
+  z-index: 5;
+  background-color: gainsboro;
+  border-radius: 100%;
+}
+
+.userSelected {
+  background-color: gold;
+}
+.computerSelected {
+  background-color: gray;
+}
