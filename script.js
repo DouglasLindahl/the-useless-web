@@ -1,49 +1,49 @@
+const body = document.querySelector("body");
 const container = document.querySelector('.container');
 
-let selectedCircle;
-let randomNumber;
-let canPress = true;
+const howManyCircles = 70;
+const colors = [
+  "green", "hotpink", "orange", "blue", "red", "purple", "magenta"
+];
 
-getRandomTile = (i) => {
-  setTimeout(() => {
-    let tileNumber;
 
-    randomNumber = Math.floor(Math.random() * container.children.length);
-
-    tileNumber = randomNumber;
-    container.children[tileNumber].children[0].classList.add(
-      'computerSelected'
-    );
-    if (
-      container.children[tileNumber].children[0].classList.contains(
-        'userSelected'
-      )
-    ) {
-      console.log('oof');
+colorChange = () => {
+  for(let i = 0; i < howManyCircles; i++)
+  {
+    let rNum = Math.floor(Math.random() * 2);
+    if(rNum == 1)
+    {
+      container.children[i].classList.add("clicked");
+      colors.forEach(color => {
+        rColor = Math.floor(Math.random() * colors.length);
+        container.children[i].children[0].style = `background-color: ${colors[rColor]}`
+      });
+      setTimeout(() => {
+        container.children[i].children[0].style = "background-color: white"
+      }, 300);
     }
-  }, 1000 * i);
-};
+  }
+}
 
-for (let i = 0; i < 12; i++) {
-  let circle = document.createElement('div');
-  let circleArea = document.createElement('div');
-
-  circle.classList.add('circle');
-  circleArea.classList.add('circleArea');
+for(let i = 1; i <= howManyCircles; i++)
+{
+  let circleArea = document.createElement("div");
+  let circle = document.createElement("div");
+  circleArea.classList.add("circleArea");
+  circle.classList.add("circle");
   circleArea.append(circle);
   container.append(circleArea);
-
-  circle.addEventListener('click', () => {
-    if (canPress == true) {
-      canPress = false;
-      for (let i = 0; i < container.children.length; i++) {
-        container.children[i].children[0].classList.remove('userSelected');
-      }
-      circle.classList.toggle('userSelected');
-      for (let i = 1; i <= 3; i++) {
-        getRandomTile(i);
-      }
-    }
-    canPress = true;
-  });
 }
+
+document.addEventListener("click", () => {
+  colorChange();
+})
+
+
+document.addEventListener("keydown", (e) => {
+  if(e.key=== " ")
+  {
+    colorChange();
+  }
+})
+
