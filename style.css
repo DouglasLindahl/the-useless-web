@@ -1,13 +1,19 @@
+:root {
+  --mainBackgroundColor: #15101d;
+  --mainTextColor: white;
+}
+
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
   overflow-x: hidden;
   transition: background-color 0.3s linear;
+  transition: font-size 0.3s linear;
 }
 
 @media screen and (max-width: 800px) {
-  .container{
+  .container {
     grid-template-rows: repeat(10, 1fr);
     grid-template-columns: repeat(7, 1fr);
   }
@@ -18,7 +24,7 @@
 }
 
 @media screen and (min-width: 800px) {
-  .container{
+  .container {
     grid-template-rows: repeat(7, 1fr);
     grid-template-columns: repeat(10, 1fr);
   }
@@ -29,7 +35,7 @@
 }
 
 @media screen and (min-width: 1200px) {
-  .container{
+  .container {
     grid-template-rows: repeat(7, 1fr);
     grid-template-columns: repeat(10, 1fr);
   }
@@ -45,6 +51,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: var(--mainBackgroundColor);
 }
 main {
   width: 95%;
@@ -52,7 +59,6 @@ main {
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  border: 3px solid black;
 }
 
 .container {
@@ -67,9 +73,35 @@ main {
   align-items: center;
 }
 .circle {
-  z-index: 5;
-  background-color: white;
+  z-index: 2;
   border-radius: 100%;
+  background-color: var(--mainBackgroundColor);
 }
 
+h1 {
+  color: var(--mainTextColor);
+  font-size: 100px;
+  width: 100%;
+  text-align: center;
+  z-index: 3;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 
+h2 {
+  color: var(--mainTextColor);
+  position: absolute;
+  z-index: 3;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.hidden {
+  opacity: 0;
+}
+.faded {
+  opacity: 30%;
+}
