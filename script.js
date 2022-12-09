@@ -52,6 +52,7 @@ let colorChange = () => {
     }
   }
   textSizeChange();
+  clickText.style = 'display: none;';
 };
 
 for (let i = 1; i <= howManyCircles; i++) {
@@ -65,7 +66,6 @@ for (let i = 1; i <= howManyCircles; i++) {
 
 document.addEventListener('click', () => {
   colorChange();
-  clickText.style = 'display: none;';
 });
 
 document.addEventListener('keydown', (e) => {

@@ -1,0 +1,11 @@
+.your-style {
+  font-weight: 200;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Montserrat';
+  src: url(Montserrat-Medium.woff);
+}
+* {
+  font-family: 'Montserrat';
+}
