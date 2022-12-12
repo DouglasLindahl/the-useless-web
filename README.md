@@ -2,11 +2,12 @@ INSERT MANDATORY GIF
 
 # Project Title
 
-Text about the project. This would also be a great place to link the game on Netlify.
+Click to get some nice colors
+useless-colors.netlify.app
 
 # Installation
 
-Add the installation instructions.
+https://github.com/DouglasLindahl/the-useless-web
 
 # Code Review
 
@@ -20,5 +21,5 @@ Add the installation instructions.
 
 Tested by the following people:
 
-1. Jane Doe
+1. Thomas Danielsson
 2. Robin Persson
